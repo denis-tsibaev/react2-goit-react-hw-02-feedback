@@ -1,9 +1,16 @@
+import PropTypes from 'prop-types';
+
 const StatisticItem = ({ name, value }) => {
     return (
-        <p>
-            {name}:{value}
-        </p>
+        <span>
+            {name}: {value}
+        </span>
     );
+};
+
+StatisticItem.propTypes = {
+    name: PropTypes.string.isRequired,
+    value: PropTypes.number.isRequired,
 };
 
 export default StatisticItem;

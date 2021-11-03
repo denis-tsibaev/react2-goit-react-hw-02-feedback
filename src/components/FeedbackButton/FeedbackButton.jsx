@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import style from './FeedbackButton.module.css';
 
-const FeedbackButton = ({ options, OnincreaseFeedback }) => (
+const FeedbackButton = ({ options, onIncreaseFeedback }) => (
     <ul className={style.buttonList}>
         {options.map(option => (
             <li key={option.toString()}>
@@ -9,7 +9,7 @@ const FeedbackButton = ({ options, OnincreaseFeedback }) => (
                     className={style[option]}
                     name={option}
                     type="button"
-                    onClick={OnincreaseFeedback}
+                    onClick={onIncreaseFeedback}
                 >
                     {option}
                 </button>
@@ -20,6 +20,7 @@ const FeedbackButton = ({ options, OnincreaseFeedback }) => (
 
 FeedbackButton.propTypes = {
     options: PropTypes.arrayOf(PropTypes.string.isRequired),
+    onIncreaseFeedback: PropTypes.func,
 };
 
 export default FeedbackButton;

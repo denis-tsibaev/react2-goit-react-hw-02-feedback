@@ -2,17 +2,21 @@ import PropTypes from 'prop-types';
 import StatisticItem from '../StatisticItem';
 import style from './StatisticList.module.css';
 
-const StatisticList = props => {
-    const namesKeys = Object.keys(props.state);
+const StatisticList = ({ state, total, positive }) => {
+    const namesKeys = Object.keys(state);
     return (
         <ul className={style.statisticList}>
             {namesKeys.map(name => (
                 <li key={name.toString()}>
-                    <StatisticItem name={name} value={props.state[name]} />
+                    <StatisticItem name={name} value={state[name]} />
                 </li>
             ))}
-            <li>Total: {props.total}</li>
-            <li>Positive feedbacks: {props.positive}%</li>
+            <li>
+                <span>Total: {total}</span>
+            </li>
+            <li>
+                <span>Positive feedbacks: {positive}%</span>
+            </li>
         </ul>
     );
 };
