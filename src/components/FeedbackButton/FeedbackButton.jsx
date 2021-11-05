@@ -20,7 +20,7 @@ const FeedbackButton = ({ options, onIncreaseFeedback }) => (
 
 FeedbackButton.propTypes = {
     options: PropTypes.arrayOf(PropTypes.string.isRequired),
-    onIncreaseFeedback: PropTypes.func,
+    onIncreaseFeedback: PropTypes.func.isRequired,
 };
 
 export default FeedbackButton;
